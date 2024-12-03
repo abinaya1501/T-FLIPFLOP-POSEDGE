@@ -31,12 +31,36 @@ From the above characteristic table, we can directly write the next state equati
 /* write all the steps invloved */
 
 **PROGRAM**
-
+```
+module exp9(T,clk,Q,Qbar);
+ input T,clk;
+ output reg Q;
+ output reg Qbar;
+ initial Q=0;
+ initial Qbar=1;
+ always @(posedge clk)
+ begin 
+Q=(T&(~Q))|((~T)&Q);
+ Qbar=~Q;
+ end
+ endmodule
+```
 /* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
 */
 
 **RTL LOGIC FOR FLIPFLOPS**
+![Screenshot 2024-12-03 072725](https://github.com/user-attachments/assets/7cce63a5-e21e-4ba1-8637-a3a87d1fa912)
+
 
 **TIMING DIGRAMS FOR FLIP FLOPS**
+![Screenshot 2024-12-03 072847](https://github.com/user-attachments/assets/bb2192f0-782c-41be-a381-e9705ae51946)
+
 
 **RESULTS**
+Thus the T FLIPFLOP implemented successfully and truth table has verified
+
+
+
+
+
+
